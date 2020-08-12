@@ -1,0 +1,31 @@
+
+<section class="container listar-page">
+    <div class="row mt-3">
+        <div class="col-12 d-flex justify-content-center">
+            <div class="card p-3">
+                <div class="table-responsive table-striped">
+                    <table class="table ">
+                        <thead>
+                            <tr>
+                                <th scope="col">Empresa</th>
+                                <th scope="col">Nome</th>
+                                <th scope="col">Email</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <ng-container *ngFor="let u of usuariosLista">
+                                <ng-container *ngFor="let a of u.user; let i= index;">    
+                                    <tr [routerLink]="['/' + a.id]">
+                                        <td [attr.rowspan]="u.user.length" *ngIf="i == 0">{{u.companyName}}</td>
+                                        <td>{{a.name}}</td>
+                                        <td>{{a.email}}</td>
+                                    </tr>
+                                </ng-container>
+                            </ng-container>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

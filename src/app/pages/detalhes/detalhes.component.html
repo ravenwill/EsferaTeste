@@ -1,0 +1,23 @@
+
+<section class="container detalhes">
+    <div class="row mt-3">
+        <div class="col-12 d-flex justify-content-center">
+            <div class="card p-3" *ngIf="usuario">
+                
+                <div class="row">
+                    <div class="col-12">
+                        <h4 class="mb-0">{{usuario.name}}</h4>
+                        <p class="mb-3"><small>{{usuario.username}}</small></p>
+                        
+                        <p><strong>Empresa: </strong>{{usuario.company.name}}</p>
+                        <p><strong>Email: </strong>{{usuario.email}}</p>
+                        <p><strong>Fone: </strong>{{usuario.phone}}</p>
+                        <p><strong>Endereço: </strong>{{usuario.address.street}}, {{usuario.address.city}} {{usuario.address.suite}}</p>
+                        <p><strong>Website: </strong><a [href]="usuario.website">{{usuario.website}}</a></p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</section>
